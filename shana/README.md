@@ -28,8 +28,8 @@ The directory structure is like this:
 ./go-foo
   ├── go.mod      # The Go module file
   ├── go.sum      # The Go module checksum file
-  ├── welcome.go  # A sample rpc API handler.
-  └── shana.yaml  # A sample Shana configuration file.
+  ├── shana.yaml  # A sample Shana configuration file.
+  └── welcome.go  # A sample rpc API handler.
 ```
 
 To start the microservice, enter the `go-foo` directory and run following command:

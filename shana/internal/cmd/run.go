@@ -32,10 +32,17 @@ type cmdRunContext struct {
 
 // runCmd represents the run command
 var runCmd = &cobra.Command{
-	Use:   "run {httpjson} [flags] -- [go build flags]",
+	Use:   "run server-proto [flags] -- [go build flags]",
 	Short: "Run current microservice as a server",
 	Long: `The 'shana run' command is to run current microservice as a local server.
 It's designed to be a development tool, not for production.
+
+The 'server-proto' specifies the server protocol used by the service.
+Here is a list of supported server protocols:
+
+  - httpjson: Shana-opinioned HTTP JSON server.
+
+More server protocols will be supported in the future.
 
 Flags after '--' will be passed to 'go build' command to build the service.`,
 	Args: cobra.MinimumNArgs(1),
@@ -331,7 +338,7 @@ use (
 		tmpls = append(tmpls, httpjsonMainTemplate)
 
 	default:
-		errors.Throwf("unsupported server type '%v'", serverType)
+		errors.Throwf("unsupported server-proto '%v'", serverType)
 	}
 
 	return tmpls
