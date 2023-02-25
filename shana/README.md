@@ -43,7 +43,7 @@ By default, the `shana run` command will start a HTTP server on port 9696. You c
 
 ```bash
 $ curl http://localhost:9696/welcome?name=Huan
-{"data":{"message":"Hello, 12"}}
+{"data":{"message":"Hello, Huan"}}
 ```
 
 The `shana.yaml` is the configuration file to control the behavior of the microservice. You can change the port number in the configuration file and restart the microservice to see the change.
