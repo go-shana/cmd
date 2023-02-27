@@ -3,7 +3,7 @@ module github.com/go-shana/cmd
 go 1.18
 
 require (
-	github.com/go-shana/core v0.0.0-20230224054124-3f6beaa30e59
+	github.com/go-shana/core v0.0.0-20230225164952-9df9d5e4467d
 	github.com/spf13/cobra v1.6.1
 	golang.org/x/mod v0.8.0
 )
