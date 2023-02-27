@@ -29,8 +29,20 @@ func Execute() {
 	}
 }
 
-func createFile(path string, tmpl *template.Template, data any) {
-	f := errors.Check1(os.Create(path))
+func createFile(filename string, tmpl *template.Template, data any) {
+	f := errors.Check1(os.Create(filename))
 	defer f.Close()
 	errors.Check(tmpl.Execute(f, data))
+}
+
+func isFileExists(filename string) bool {
+	if stats, e := os.Stat(filename); e == nil {
+		if stats.IsDir() {
+			return false
+		}
+
+		return true
+	}
+
+	return false
 }
